@@ -19,14 +19,23 @@ const GlobalStyle = createGlobalStyle`
  `
 
 const LayoutStyled = styled.div``
+const Root = styled.div`
+  max-width: 2000px;
+  margin: 0 auto;
+  @media only screen and (min-width: 1500px) {
+    width: 90%;
+  }
+`
 
 const Layout = props => {
   return (
     <LayoutStyled>
       <GlobalStyle />
       <Background>
-        <Header />
-        <Hero />
+        <Root>
+          <Header />
+          <Hero />
+        </Root>
       </Background>
     </LayoutStyled>
   )

@@ -1,96 +1,90 @@
-import React, { useEffect, useState, useRef } from "react";
-import styled from 'styled-components'
+import React, { useEffect, useState, useRef } from "react"
+import styled from "styled-components"
+import Container from "../../ui/Grid/Container"
+import Row from "../../ui/Grid/Row"
+import Column from "../../ui/Grid/Column"
+import ButtonWhite from "../../ui/Buttons/ButtonWhite"
 
-const RowTimer = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin: 15px 0;
+const StyledColumn = styled.div`
+  &:not(:last-child) {
+    margin-right: 90px;
+  }
 `
+
 const RowBar = styled.div`
-  height: 30px;
+  display: flex;
+  min-width: 100%;
+  align-items: center;
+  height: 35px;
   background-color: white;
   margin: 15px 0;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
+  margin: 30px 0;
 `
 
 const Filler = styled.div`
+  margin-left: 2px;
   height: 30px;
-  background-color: #00ff1e;
+  background-color: #0a7c5c;
   width: 80%;
+  border-radius: 15px;
 `
 
 const Title = styled.p`
-color: white;
-font-size: 50px;
-`
-const TitleColored = styled.span`
-  background: #f24f00;
-  font-size: 50px;
-  padding: 0 0px 5px 0px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
 `
 
 const CounterNumber = styled.p`
   color: white;
-font-size: 35px;
-margin-bottom: 15px;
+  font-size: 50px;
+  margin-bottom: 15px;
 `
 
 const CounterText = styled.p`
-color: white;
+  color: white;
 `
 
-const Timer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between ;
-align-items: center;
-`
-const YourStyled = styled.span`
-  font-weight: 800;
-  font-size: 50px;
-
-`
-
-const LaunchPart = (props) => {  
-
-  const [timerDays, setTimerDays] = useState('00')
-  const [timerHours, setTimerHours] = useState('00')
-  const [timerMinutes, setTimerMinutes] = useState('00')
-  const [timerSeconds, setTimerSeconds] = useState('00')
-
+const LaunchPart = props => {
+  const [timerDays, setTimerDays] = useState("00")
+  const [timerHours, setTimerHours] = useState("00")
+  const [timerMinutes, setTimerMinutes] = useState("00")
+  const [timerSeconds, setTimerSeconds] = useState("00")
 
   let interval = useRef()
   const startTimer = () => {
-    let countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+    let countDownDate = new Date("Jan 5, 2022 15:37:25").getTime()
     interval = setInterval(() => {
-      let now = new Date().getTime();
-      let distance = countDownDate - now;
-      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      if (distance < 0){
+      let now = new Date().getTime()
+      let distance = countDownDate - now
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      let hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      )
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000)
+      if (distance < 0) {
         clearInterval()
       } else {
-        if(days < 10 ){
+        if (days < 10) {
           setTimerDays(`0 + ${days}`)
         } else {
           setTimerDays(days)
         }
-        if(hours < 10 ){
+        if (hours < 10) {
           setTimerHours(`0${hours}`)
         } else {
           setTimerHours(hours)
-
         }
-        if(minutes < 10 ){
+        if (minutes < 10) {
           setTimerMinutes(`0${minutes}`)
         } else {
           setTimerMinutes(minutes)
         }
-        if(seconds < 10 ){
+        if (seconds < 10) {
           setTimerSeconds(`0${seconds}`)
         } else {
           setTimerSeconds(seconds)
@@ -99,36 +93,44 @@ const LaunchPart = (props) => {
     }, 1000)
   }
   useEffect(() => {
-    startTimer();
-    return() => {}
+    startTimer()
+    return () => {}
   })
 
-
   return (
-  <div>
-    <div><Title><YourStyled>YOUR </YourStyled><TitleColored>public sale launching</TitleColored> in:</Title> </div>
-    <RowTimer>
-      <Timer>
-        <CounterNumber>{timerDays}</CounterNumber>
-        <CounterText>DAYS</CounterText>
-      </Timer>
-      <Timer>
-        <CounterNumber>{timerHours}</CounterNumber>
-        <CounterText>HOURS</CounterText>
-      </Timer>
-      <Timer>
-      <CounterNumber>{timerMinutes}</CounterNumber>
-        <CounterText>MINUTES</CounterText>
-      </Timer>
-      <Timer>
-        <CounterNumber>{timerSeconds}</CounterNumber>
-        <CounterText>SECONDS</CounterText>
-      </Timer>
-    </RowTimer>
-    <RowBar>
-      <Filler></Filler>
-    </RowBar>
-  </div>
+    <Container>
+      <Row>
+        <Column>
+          <Row>
+            <Title>ICO WILL START IN</Title>
+          </Row>
+          <Row>
+            <StyledColumn>
+              <CounterNumber>{timerDays}</CounterNumber>
+              <CounterText>DAYS</CounterText>
+            </StyledColumn>
+            <StyledColumn>
+              <CounterNumber>{timerHours}</CounterNumber>
+              <CounterText>HOURS</CounterText>
+            </StyledColumn>
+            <StyledColumn>
+              <CounterNumber>{timerMinutes}</CounterNumber>
+              <CounterText>MINUTES</CounterText>
+            </StyledColumn>
+            <StyledColumn>
+              <CounterNumber>{timerSeconds}</CounterNumber>
+              <CounterText>SECONDS</CounterText>
+            </StyledColumn>
+          </Row>
+          <RowBar>
+            <Filler></Filler>
+          </RowBar>
+          <Row justify="center">
+            <ButtonWhite>register & buy tokens now</ButtonWhite>
+          </Row>
+        </Column>
+      </Row>
+    </Container>
   )
 }
 
