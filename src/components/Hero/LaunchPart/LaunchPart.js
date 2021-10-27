@@ -1,8 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from 'styled-components'
-import Column from '../../ui/Grid/Column'
-import {Grid} from '../../ui/Grid'
-import Row from '../../ui/Grid/Row'
 
 const RowTimer = styled.div`
 display: flex;
@@ -108,8 +105,8 @@ const LaunchPart = (props) => {
 
 
   return (
-  <Column column>
-    <Row><Title><YourStyled>YOUR </YourStyled><TitleColored>public sale launching</TitleColored> in:</Title> </Row>
+  <div>
+    <div><Title><YourStyled>YOUR </YourStyled><TitleColored>public sale launching</TitleColored> in:</Title> </div>
     <RowTimer>
       <Timer>
         <CounterNumber>{timerDays}</CounterNumber>
@@ -131,7 +128,7 @@ const LaunchPart = (props) => {
     <RowBar>
       <Filler></Filler>
     </RowBar>
-  </Column>
+  </div>
   )
 }
 

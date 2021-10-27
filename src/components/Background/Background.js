@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import styled from 'styled-components';
 import img from '../../assets/connected-dots.png'
-import ParticalsUnit from './ParticalsUnit'
 
 
 const StyledImg = styled.img`
@@ -45,8 +44,6 @@ const Background = (props) => {
   return (
   <BackgroundStyled>
     {props.children}
-    <ParticalsUnit/>
-
   </BackgroundStyled>
   )
 }

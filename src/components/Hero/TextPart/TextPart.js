@@ -7,9 +7,6 @@ import {
   AiFillInstagram,
   AiFillTwitterCircle,
 } from "react-icons/ai"
-import Column from '../../ui/Grid/Column'
-import {Grid} from '../../ui/Grid'
-import Row from '../../ui/Grid/Row'
 
 const MainTitle = styled.h1`
 
@@ -51,35 +48,35 @@ const TextPart = (props) => {
     paddingRight: "15px",
   }
   return (
-    <Column column maxwidth='50%'>
-    <Row>
+    <div column maxwidth='50%'>
+    <div>
       <MainTitle>YOUR</MainTitle>
-    </Row>
-    <Row>
+    </div>
+    <div>
       <TextStyled>
         join us to disrupt the content and e-commerce economy
       </TextStyled>
-    </Row>
-    <Row>
+    </div>
+    <div>
       <SubTextStyled>
       Decentralized NFT user generated content network and blockchain driven commission free marketplace
       </SubTextStyled>
-    </Row>
-    <Row>
+    </div>
+    <div>
       <Button
         whileTap={{ scale: 0.9, transition: 0.4 }}
         whileHover={{ scale: 1.1, transition: 0.4 }}
       >
         Download whitepaper
       </Button>
-    </Row>
-    <Row  flex>
+    </div>
+    <div  flex>
       <FaFacebook style={icon} />
       <AiFillGoogleCircle style={icon} />
       <AiFillTwitterCircle style={icon} />
       <AiFillInstagram style={icon} />
-    </Row>
-  </Column>
+    </div>
+  </div>
   )
 }
 export default TextPart
