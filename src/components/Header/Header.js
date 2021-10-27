@@ -64,8 +64,8 @@ const Header = props => {
     <Section>
         <Container>
           <ColumnLinks>
-            <YourStyled>YOUR</YourStyled>
-            <StyledSpan>content</StyledSpan>
+    <YourStyled>YOUR</YourStyled>
+  <StyledSpan>content</StyledSpan>
           </ColumnLinks>
           <ColumnLinks>
             <YourStyled>YOUR</YourStyled>
