@@ -1,11 +1,7 @@
 import * as React from "react"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo/Seo"
+import Layout from "../components/layout"
+// import Seo from "../components/Seo/Seo"
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="YOUR" />
-  </Layout>
-)
+const IndexPage = () => <Layout>{/* <Seo title="YOUR" /> */}</Layout>
 
 export default IndexPage
