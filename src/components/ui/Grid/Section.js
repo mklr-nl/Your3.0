@@ -2,8 +2,13 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledSection = styled.div`
+  max-width: 2000px;
+  margin: 0 auto;
+  @media only screen and (min-width: 1500px) {
+    width: 90%;
+  }
   @media only screen and (min-width: 1300px) {
-    margin: 100px 0;
+    padding: 100px 0;
   }
 `
 

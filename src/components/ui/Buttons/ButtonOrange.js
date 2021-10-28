@@ -20,8 +20,8 @@ const ButtonOrange = props => {
     <ButtonStyled
       className={props.className}
       onClick={props.onClick}
-      whileTap={{ scale: 0.9, transition: 0.4 }}
-      whileHover={{ scale: 1.1, transition: 0.4 }}
+      whileTap={{ scale: 0.9, transition: 1 }}
+      whileHover={{ scale: 1.05, transition: 0.4 }}
     >
       {props.children}
     </ButtonStyled>

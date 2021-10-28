@@ -12,6 +12,11 @@ import Row from "../../ui/Grid/Row"
 import Column from "../../ui/Grid/Column"
 import ButtonWhite from "../../ui/Buttons/ButtonWhite"
 
+const ColumnStyled = styled(Column)`
+  @media only screen and (max-width: 1300px) {
+    margin-top: 111px;
+  }
+`
 const TextStyled = styled.p`
   color: white;
   font-size: 60px;
@@ -32,11 +37,12 @@ const TextPart = props => {
     height: "50px",
     color: "white",
     paddingRight: "15px",
+    cursor: "pointer",
   }
   return (
     <Container>
       <Row>
-        <Column>
+        <ColumnStyled>
           <Row>
             <TextStyled>
               the first commision free blockchain driven marketplace
@@ -52,12 +58,36 @@ const TextPart = props => {
             <ButtonWhite>ICO registration</ButtonWhite>
           </Row>
           <Row flex>
-            <FaFacebook style={icon} />
-            <AiFillGoogleCircle style={icon} />
-            <AiFillTwitterCircle style={icon} />
-            <AiFillInstagram style={icon} />
+            <a
+              href="https://nl-nl.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaFacebook style={icon} />
+            </a>
+            <a
+              href="https://nl-nl.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGoogleCircle style={icon} />
+            </a>
+            <a
+              href="https://nl-nl.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillTwitterCircle style={icon} />
+            </a>
+            <a
+              href="https://nl-nl.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillInstagram style={icon} />
+            </a>
           </Row>
-        </Column>
+        </ColumnStyled>
       </Row>
     </Container>
   )

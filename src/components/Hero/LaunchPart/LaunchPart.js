@@ -26,7 +26,7 @@ const Filler = styled.div`
   margin-left: 2px;
   height: 30px;
   background-color: #0a7c5c;
-  width: 80%;
+  width: ${props => props.fillerwidth}%;
   border-radius: 15px;
 `
 
@@ -53,6 +53,7 @@ const LaunchPart = props => {
   const [timerHours, setTimerHours] = useState("00")
   const [timerMinutes, setTimerMinutes] = useState("00")
   const [timerSeconds, setTimerSeconds] = useState("00")
+  const [filler, setFiller] = useState(0)
 
   let interval = useRef()
   const startTimer = () => {
@@ -61,6 +62,7 @@ const LaunchPart = props => {
       let now = new Date().getTime()
       let distance = countDownDate - now
       let days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      setFiller(days)
       let hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       )
@@ -92,6 +94,7 @@ const LaunchPart = props => {
       }
     }, 1000)
   }
+
   useEffect(() => {
     startTimer()
     return () => {}
@@ -123,7 +126,7 @@ const LaunchPart = props => {
             </StyledColumn>
           </Row>
           <RowBar>
-            <Filler></Filler>
+            <Filler fillerwidth={filler}></Filler>
           </RowBar>
           <Row justify="center">
             <ButtonWhite>register & buy tokens now</ButtonWhite>
