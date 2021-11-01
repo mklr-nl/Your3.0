@@ -3,9 +3,7 @@ import styled from "styled-components"
 import { TextPart } from "./TextPart"
 import { LaunchPart } from "./LaunchPart"
 
-import Row from "../ui/Grid/Row"
-import Section from "../ui/Grid/Section"
-import Container from "../ui/Grid/Container"
+import { Section, Container, Row } from "../ui/Grid"
 
 const SectionStyled = styled(Section)`
   padding-top: 150px;

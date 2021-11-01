@@ -1,13 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { Section, Container, Row, Column, InnerRow } from "../ui/Grid"
-
-import WorldImage from "../../../assets/your-documents.svg"
-
-const WorldImageStyled = styled(WorldImage)``
+import MarketPlace from "../../../assets/your-buy-marketplace.svg"
 
 const SectionStyled = styled(Section)`
-  transform: translateY(-100px);
+  padding-top: 150px;
 `
 
 const SubTitle = styled.p`
@@ -18,7 +15,7 @@ const SubTitle = styled.p`
   font-style: normal;
   line-height: 1.75;
   letter-spacing: 1.34px;
-  color: #201648;
+  color: #fff;
 `
 
 const Title = styled.p`
@@ -29,7 +26,7 @@ const Title = styled.p`
   font-style: normal;
   line-height: 1;
   letter-spacing: -1px;
-  color: #201648;
+  color: #fff;
 `
 const Text = styled.p`
   font-family: ProximaNova;
@@ -39,17 +36,13 @@ const Text = styled.p`
   font-style: normal;
   line-height: 1.68;
   letter-spacing: normal;
-  color: #73737b;
+  color: #fff; ;
 `
-
-const EcoSystem = props => {
+const ContentNetwork = props => {
   return (
     <SectionStyled>
       <Container>
         <Row>
-          <Column flex={2}>
-            <WorldImageStyled />
-          </Column>
           <Column flex={2}>
             <InnerRow>
               <SubTitle>OUR ECOSYSTEM</SubTitle>
@@ -72,9 +65,12 @@ const EcoSystem = props => {
               </Text>
             </InnerRow>
           </Column>
+          <Column flex={2}>
+            <MarketPlace />
+          </Column>
         </Row>
       </Container>
     </SectionStyled>
   )
 }
-export default EcoSystem
+export default ContentNetwork

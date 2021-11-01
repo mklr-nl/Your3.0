@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Box from "./Box/Box"
-import Container from "../ui/Grid/Container"
-import Row from "../ui/Grid/Row"
-import Section from "../ui/Grid/Section"
+import { Section, Container, Row } from "../ui/Grid"
 
 const SectionStyled = styled(Section)`
   transform: translateY(-110px);

@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Container from "../../ui/Grid/Container"
-import Row from "../../ui/Grid/Row"
 import Column from "../../ui/Grid/Column"
 
 const BoxStyled = styled(Column)`
