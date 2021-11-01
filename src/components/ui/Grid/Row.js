@@ -4,21 +4,14 @@ import styled from "styled-components"
 const StyledRow = styled.div`
   padding: 30px 0;
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   justify-content: ${props => props.justify};
-  @media only screen and (max-width: 1300px) {
-    flex-direction: ${props => props.direction};
-    align-items: center;
-    text-align: center;
-  }
 `
 
 const Row = props => {
   return (
-    <StyledRow
-      justify={props.justify}
-      className={props.className}
-      direction={props.direction}
-    >
+    <StyledRow justify={props.justify} className={props.className}>
       {props.children}
     </StyledRow>
   )

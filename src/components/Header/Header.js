@@ -22,20 +22,22 @@ const Wrapper = styled.div`
   transition: ease 0.4s all;
   opacity: 90%;
   max-width: 2000px;
+`
+const ContainerStyled = styled(Container)`
   margin: 0 auto;
-  @media only screen and (min-width: 1500px) {
-    width: 90%;
-  }
 `
 
 const Icon = styled.p`
-  padding: 0 15px;
   color: ${props => props.color};
   font-size: 40px;
   font-weight: bold;
 `
 
-const ButtonOrangeStyled = styled(ButtonOrange)``
+const ButtonOrangeStyled = styled(ButtonOrange)`
+  @media only screen and (max-width: 400px) {
+    display: none;
+  }
+`
 
 const StyledLink = styled(motion.a)`
   padding: 15px;
@@ -45,16 +47,16 @@ const StyledLink = styled(motion.a)`
   }
   cursor: pointer;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: ${props => props.theme.textsize.small};
   color: ${props => props.color};
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `
 
-const ColumnMenuIcon = styled.div`
+const BurgerContainer = styled.div`
+  display: flex;
   z-index: 2000;
-  padding-left: 30px;
   @media only screen and (min-width: 1100px) {
-    display: none;
+    /* display: none; */
   }
 `
 
@@ -67,6 +69,11 @@ const CrossIconStyled = styled(GiTireIronCross)`
   color: red;
   font-size: 60px;
   cursor: pointer;
+`
+
+const RightSide = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 const Header = props => {
@@ -95,9 +102,9 @@ const Header = props => {
       shadow={navbar && "0 4px 6px -6px #222"}
     >
       <GlobalStyle />
-      <Container justify="space-between" marginzero>
+      <ContainerStyled justify="space-between" marginzero>
         <Icon color={navbar ? "black" : "white"}>YOUR</Icon>
-        <Container marginzero>
+        <RightSide>
           <StyledLink
             whileTap={{ scale: 0.9, transition: 1 }}
             whileHover={{ scale: 1.05, transition: 0.4 }}
@@ -141,15 +148,16 @@ const Header = props => {
             team
           </StyledLink>
           <ButtonOrangeStyled>whitepaper</ButtonOrangeStyled>
-          <ColumnMenuIcon onClick={clickHandler}>
-            {showBurger ? (
-              <BurgerIconStyled color={navbar ? "black" : "white"} />
-            ) : (
-              <CrossIconStyled />
-            )}
-          </ColumnMenuIcon>
-        </Container>
-      </Container>
+          {showBurger ? (
+            <BurgerIconStyled
+              onClick={clickHandler}
+              color={navbar ? "black" : "white"}
+            />
+          ) : (
+            <CrossIconStyled onClick={clickHandler} />
+          )}
+        </RightSide>
+      </ContainerStyled>
     </Wrapper>
   )
 }

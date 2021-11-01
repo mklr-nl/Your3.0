@@ -17,9 +17,9 @@ const ColumnStyled = styled(Column)`
     margin-top: 111px;
   }
 `
-const TextStyled = styled.p`
+const TitleStyled = styled.p`
   color: white;
-  font-size: 60px;
+  font-size: ${props => props.theme.textsize.xlarge};
   font-weight: 800;
   @media only screen and (min-width: 1900px) {
     max-width: 75%;
@@ -28,7 +28,7 @@ const TextStyled = styled.p`
 const SubTextStyled = styled.p`
   font-weight: 100;
   color: white;
-  font-size: 24px;
+  font-size: ${props => props.theme.textsize.middle};
 `
 
 const TextPart = props => {
@@ -40,56 +40,36 @@ const TextPart = props => {
     cursor: "pointer",
   }
   return (
-    <Container>
+    <ColumnStyled minWidth="400px" flex={4}>
       <Row>
-        <ColumnStyled>
-          <Row>
-            <TextStyled>
-              the first commision free blockchain driven marketplace
-            </TextStyled>
-          </Row>
-          <Row>
-            <SubTextStyled>
-              with a decentralized user generated content network
-            </SubTextStyled>
-          </Row>
-          <Row>
-            <ButtonWhite>Download whitepaper</ButtonWhite>
-            <ButtonWhite>ICO registration</ButtonWhite>
-          </Row>
-          <Row flex>
-            <a
-              href="https://nl-nl.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaFacebook style={icon} />
-            </a>
-            <a
-              href="https://nl-nl.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillGoogleCircle style={icon} />
-            </a>
-            <a
-              href="https://nl-nl.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillTwitterCircle style={icon} />
-            </a>
-            <a
-              href="https://nl-nl.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillInstagram style={icon} />
-            </a>
-          </Row>
-        </ColumnStyled>
+        <TitleStyled>
+          the first commision free blockchain driven marketplace
+        </TitleStyled>
       </Row>
-    </Container>
+      <Row>
+        <SubTextStyled>
+          with a decentralized user generated content network
+        </SubTextStyled>
+      </Row>
+      <Row>
+        <ButtonWhite>Download whitepaper</ButtonWhite>
+        <ButtonWhite>ICO registration</ButtonWhite>
+      </Row>
+      <Row flex>
+        <a href="https://nl-nl.facebook.com/" target="_blank" rel="noreferrer">
+          <FaFacebook style={icon} />
+        </a>
+        <a href="https://nl-nl.facebook.com/" target="_blank" rel="noreferrer">
+          <AiFillGoogleCircle style={icon} />
+        </a>
+        <a href="https://nl-nl.facebook.com/" target="_blank" rel="noreferrer">
+          <AiFillTwitterCircle style={icon} />
+        </a>
+        <a href="https://nl-nl.facebook.com/" target="_blank" rel="noreferrer">
+          <AiFillInstagram style={icon} />
+        </a>
+      </Row>
+    </ColumnStyled>
   )
 }
 export default TextPart

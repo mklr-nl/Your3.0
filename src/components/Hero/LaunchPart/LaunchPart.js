@@ -1,19 +1,11 @@
 import React, { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
-import Container from "../../ui/Grid/Container"
 import Row from "../../ui/Grid/Row"
 import Column from "../../ui/Grid/Column"
 import ButtonWhite from "../../ui/Buttons/ButtonWhite"
 
-const StyledColumn = styled.div`
-  &:not(:last-child) {
-    margin-right: 90px;
-  }
-`
-
 const RowBar = styled.div`
   display: flex;
-  min-width: 100%;
   align-items: center;
   height: 35px;
   background-color: white;
@@ -32,15 +24,20 @@ const Filler = styled.div`
 
 const Title = styled.p`
   color: white;
-  font-size: 20px;
+  font-size: calc(16px + 0.1vw);
   font-weight: bold;
-  width: 100%;
   text-align: center;
+`
+
+const TimerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const CounterNumber = styled.p`
   color: white;
-  font-size: 50px;
+  font-size: calc(16px + 2vw);
   margin-bottom: 15px;
 `
 
@@ -101,39 +98,35 @@ const LaunchPart = props => {
   })
 
   return (
-    <Container>
-      <Row>
-        <Column>
-          <Row>
-            <Title>ICO WILL START IN</Title>
-          </Row>
-          <Row>
-            <StyledColumn>
-              <CounterNumber>{timerDays}</CounterNumber>
-              <CounterText>DAYS</CounterText>
-            </StyledColumn>
-            <StyledColumn>
-              <CounterNumber>{timerHours}</CounterNumber>
-              <CounterText>HOURS</CounterText>
-            </StyledColumn>
-            <StyledColumn>
-              <CounterNumber>{timerMinutes}</CounterNumber>
-              <CounterText>MINUTES</CounterText>
-            </StyledColumn>
-            <StyledColumn>
-              <CounterNumber>{timerSeconds}</CounterNumber>
-              <CounterText>SECONDS</CounterText>
-            </StyledColumn>
-          </Row>
-          <RowBar>
-            <Filler fillerwidth={filler}></Filler>
-          </RowBar>
-          <Row justify="center">
-            <ButtonWhite>register & buy tokens now</ButtonWhite>
-          </Row>
-        </Column>
+    <Column minWidth="400px" flex={2}>
+      <Row justify="center">
+        <Title>ICO WILL START IN</Title>
       </Row>
-    </Container>
+      <Row justify="space-between">
+        <TimerContainer>
+          <CounterNumber>{timerDays}</CounterNumber>
+          <CounterText>DAYS</CounterText>
+        </TimerContainer>
+        <TimerContainer>
+          <CounterNumber>{timerHours}</CounterNumber>
+          <CounterText>HOURS</CounterText>
+        </TimerContainer>
+        <TimerContainer>
+          <CounterNumber>{timerMinutes}</CounterNumber>
+          <CounterText>MINUTES</CounterText>
+        </TimerContainer>
+        <TimerContainer>
+          <CounterNumber>{timerSeconds}</CounterNumber>
+          <CounterText>SECONDS</CounterText>
+        </TimerContainer>
+      </Row>
+      <RowBar>
+        <Filler fillerwidth={filler}></Filler>
+      </RowBar>
+      <Row justify="center">
+        <ButtonWhite>register & buy tokens now</ButtonWhite>
+      </Row>
+    </Column>
   )
 }
 

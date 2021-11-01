@@ -7,7 +7,7 @@ const ButtonStyled = styled(motion.button)`
   color: white;
   border-radius: 30px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 18px;
+  font-size: ${props => props.theme.textsize.small};
   font-weight: 800;
   outline: none;
   border: none;

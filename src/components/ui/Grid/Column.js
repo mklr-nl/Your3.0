@@ -2,18 +2,22 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledColumn = styled.div`
-  padding: 15px;
-  margin: 15px;
   display: flex;
+  flex: ${props => props.flex};
   flex-direction: column;
-  @media only screen and (max-width: 1300px) {
-    align-items: center;
-  }
+  flex-basis: 350px;
+  padding: 15px;
 `
 
 const Column = props => {
   return (
-    <StyledColumn className={props.className}>{props.children}</StyledColumn>
+    <StyledColumn
+      minWidth={props.minWidth}
+      flex={props.flex}
+      className={props.className}
+    >
+      {props.children}
+    </StyledColumn>
   )
 }
 export default Column

@@ -7,14 +7,15 @@ const ButtonStyled = styled(motion.button)`
   color: black;
   border-radius: 30px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 18px;
+  font-size: ${props => props.theme.textsize.small};
   font-weight: 800;
   outline: none;
   border: none;
   cursor: pointer;
   padding: 20px 30px 20px 30px;
-  &:nth-child(2) {
-    margin-left: 45px;
+  margin: 5px 0;
+  &:nth-child(1) {
+    margin-right: 45px;
   }
 `
 

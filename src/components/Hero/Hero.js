@@ -13,7 +13,7 @@ const StyledRow = styled(Row)`
 const Hero = props => {
   return (
     <Section>
-      <StyledRow direction="column">
+      <StyledRow>
         <TextPart />
         <LaunchPart />
       </StyledRow>
