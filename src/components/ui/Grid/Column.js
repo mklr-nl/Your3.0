@@ -15,6 +15,7 @@ const Column = props => {
       minWidth={props.minWidth}
       flex={props.flex}
       className={props.className}
+      direction={props.direction}
     >
       {props.children}
     </StyledColumn>

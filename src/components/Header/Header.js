@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { GiTireIronCross } from "react-icons/gi"
-import { Container, Row } from "../ui/Grid"
+import { Container, Row, Column } from "../ui/Grid"
 
 import ButtonOrange from "../ui/Buttons/ButtonOrange"
 import { createGlobalStyle } from "styled-components"
