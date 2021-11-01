@@ -5,10 +5,14 @@ import Container from "../ui/Grid/Container"
 import Row from "../ui/Grid/Row"
 import Section from "../ui/Grid/Section"
 
+const SectionStyled = styled(Section)`
+  transform: translateY(-110px);
+`
+
 const FeatureBoxes = props => {
   const titles = ["Yourcontent", "Yourcontent", "Yourcontent"]
   return (
-    <Section>
+    <SectionStyled>
       <Container>
         <Row>
           <Box
@@ -28,7 +32,7 @@ const FeatureBoxes = props => {
           />
         </Row>
       </Container>
-    </Section>
+    </SectionStyled>
   )
 }
 export default FeatureBoxes

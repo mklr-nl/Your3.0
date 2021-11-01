@@ -7,10 +7,16 @@ import Row from "../ui/Grid/Row"
 import ButtonOrange from "../ui/Buttons/ButtonOrange"
 import { createGlobalStyle } from "styled-components"
 import { motion } from "framer-motion"
+import iconBlack from "../../assets/your-logo-black.svg"
+import iconWhite from "../../assets/your-logo-white.svg"
 
 const GlobalStyle = createGlobalStyle`
     body{   
     }
+`
+
+const StyledLogo = styled.img`
+  height: 50px;
 `
 const Wrapper = styled.div`
   z-index: 100000;
@@ -23,12 +29,6 @@ const Wrapper = styled.div`
   transition: ease 0.4s all;
   opacity: 90%;
   max-width: 2000px;
-`
-
-const Icon = styled.p`
-  color: ${props => props.color};
-  font-size: 40px;
-  font-weight: bold;
 `
 
 const ButtonOrangeStyled = styled(ButtonOrange)`
@@ -100,7 +100,11 @@ const Header = props => {
       <GlobalStyle />
       <Container justify="space-between" marginzero>
         <Row nowrap justify="space-between">
-          <Icon color={navbar ? "black" : "white"}>YOUR</Icon>
+          {navbar ? (
+            <StyledLogo src={iconBlack}></StyledLogo>
+          ) : (
+            <StyledLogo src={iconWhite}></StyledLogo>
+          )}
           <RightSide>
             <StyledLink
               whileTap={{ scale: 0.9, transition: 1 }}

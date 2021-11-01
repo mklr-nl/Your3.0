@@ -9,8 +9,8 @@ const BoxStyled = styled(Column)`
   background-color: white;
   text-align: center;
   margin: 15px 0;
-  transform: translateY(-200px);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  align-items: center;
 `
 
 const Title = styled.p`
@@ -20,7 +20,17 @@ const Title = styled.p`
 `
 
 const Text = styled.p`
-  padding: 0 30px 15px 30px;
+  width: 300px;
+  height: 30px;
+  font-family: MADETOMMY;
+  font-size: ${props => props.theme.textsize.small};
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.43px;
+  color: #201648;
+  padding-bottom: 20px;
 `
 
 const Box = props => {

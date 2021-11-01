@@ -7,16 +7,20 @@ import Row from "../ui/Grid/Row"
 import Section from "../ui/Grid/Section"
 import Container from "../ui/Grid/Container"
 
+const SectionStyled = styled(Section)`
+  padding-top: 150px;
+`
+
 const Hero = props => {
   return (
-    <Section>
+    <SectionStyled>
       <Container>
         <Row>
           <TextPart />
           <LaunchPart />
         </Row>
       </Container>
-    </Section>
+    </SectionStyled>
   )
 }
 export default Hero

@@ -5,6 +5,7 @@ import { Hero } from "./Hero"
 
 import { Header } from "./Header"
 import { FeatureBoxes } from "../components/FeatureBoxes"
+import { EcoSystem } from "./EcoSystem"
 
 const Layout = props => {
   return (
@@ -13,7 +14,8 @@ const Layout = props => {
         <Header />
         <Hero />
       </Background>
-      <FeatureBoxes></FeatureBoxes>
+      <FeatureBoxes />
+      <EcoSystem />
       {props.children}
     </Root>
   )

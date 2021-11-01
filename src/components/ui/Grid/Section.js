@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledSection = styled.div`
-  padding: 100px 0;
+  padding-bottom: 150px;
 `
 
 const Section = props => {

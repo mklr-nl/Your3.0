@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="412px" height="115px" viewBox="0 0 412 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-0.000000, -76.000000)" fill="#FFFFFF">
+            <g id="Group-7" transform="translate(0.000000, 76.000000)">
+                <polygon id="Fill-74" points="108 0 73.243162 0 61.4482759 17.2273373 78.9923697 41.0909091"></polygon>
+                <polygon id="Fill-75" points="34.6155826 0 0 0 40.9561752 58.7472762 40.9561752 113 69.8275862 113 69.8275862 51.2720638 55.3918807 30.7196476"></polygon>
+            </g>
+            <text id="our" font-family="SenticText-Black, Sentic" font-size="190" font-weight="800" letter-spacing="-7">
+                <tspan x="89" y="185">our</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
