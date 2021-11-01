@@ -7,8 +7,7 @@ import Row from "../ui/Grid/Row"
 import ButtonOrange from "../ui/Buttons/ButtonOrange"
 import { createGlobalStyle } from "styled-components"
 import { motion } from "framer-motion"
-import iconBlack from "../../assets/your-logo-black.svg"
-import iconWhite from "../../assets/your-logo-white.svg"
+import IconBlack from "../../../assets/your-logo-black.svg"
 
 const GlobalStyle = createGlobalStyle`
     body{   
@@ -100,11 +99,7 @@ const Header = props => {
       <GlobalStyle />
       <Container justify="space-between" marginzero>
         <Row nowrap justify="space-between">
-          {navbar ? (
-            <StyledLogo src={iconBlack}></StyledLogo>
-          ) : (
-            <StyledLogo src={iconWhite}></StyledLogo>
-          )}
+          <IconBlack />
           <RightSide>
             <StyledLink
               whileTap={{ scale: 0.9, transition: 1 }}
