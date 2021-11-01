@@ -52,18 +52,13 @@ const StyledLink = styled(motion.a)`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `
 
-const BurgerContainer = styled.div`
-  display: flex;
-  z-index: 2000;
-  @media only screen and (min-width: 1100px) {
-    /* display: none; */
-  }
-`
-
 const BurgerIconStyled = styled(GiHamburgerMenu)`
   color: ${props => props.color};
   font-size: 60px;
   cursor: pointer;
+  @media only screen and (min-width: 1100px) {
+    display: none;
+  }
 `
 const CrossIconStyled = styled(GiTireIronCross)`
   color: red;
