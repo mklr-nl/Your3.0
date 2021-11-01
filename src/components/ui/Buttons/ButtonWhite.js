@@ -11,13 +11,8 @@ const ButtonStyled = styled(motion.button)`
   font-weight: 800;
   outline: none;
   border: none;
-  min-width: 240px;
   cursor: pointer;
   padding: 20px 30px 20px 30px;
-  margin: 5px 0;
-  &:nth-child(1) {
-    margin-right: 45px;
-  }
 `
 
 const ButtonWhite = props => {

@@ -7,9 +7,8 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai"
 
-import Container from "../../ui/Grid/Container"
-import Row from "../../ui/Grid/Row"
 import Column from "../../ui/Grid/Column"
+import InnerRow from "../../ui/Grid/InnerRow"
 import ButtonWhite from "../../ui/Buttons/ButtonWhite"
 
 const TitleStyled = styled.p`
@@ -31,26 +30,25 @@ const TextPart = props => {
     width: "50px",
     height: "50px",
     color: "white",
-    paddingRight: "15px",
     cursor: "pointer",
   }
   return (
     <Column minWidth="400px" flex={3}>
-      <Row>
+      <InnerRow>
         <TitleStyled>
           the first commision free blockchain driven marketplace
         </TitleStyled>
-      </Row>
-      <Row>
+      </InnerRow>
+      <InnerRow>
         <SubTextStyled>
           with a decentralized user generated content network
         </SubTextStyled>
-      </Row>
-      <Row>
+      </InnerRow>
+      <InnerRow>
         <ButtonWhite>Download whitepaper</ButtonWhite>
         <ButtonWhite>ICO registration</ButtonWhite>
-      </Row>
-      <Row flex>
+      </InnerRow>
+      <InnerRow>
         <a href="https://nl-nl.facebook.com/" target="_blank" rel="noreferrer">
           <FaFacebook style={icon} />
         </a>
@@ -63,7 +61,7 @@ const TextPart = props => {
         <a href="https://nl-nl.facebook.com/" target="_blank" rel="noreferrer">
           <AiFillInstagram style={icon} />
         </a>
-      </Row>
+      </InnerRow>
     </Column>
   )
 }

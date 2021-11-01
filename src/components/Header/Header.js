@@ -99,7 +99,7 @@ const Header = props => {
     >
       <GlobalStyle />
       <Container justify="space-between" marginzero>
-        <Row justify="space-between">
+        <Row nowrap justify="space-between">
           <Icon color={navbar ? "black" : "white"}>YOUR</Icon>
           <RightSide>
             <StyledLink

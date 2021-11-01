@@ -2,17 +2,22 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledRow = styled.div`
-  padding: 30px 0;
+  padding: 15px 0;
   display: flex;
-  justify-content: ${props => props.justify};
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 5%;
+  margin: 5px 0;
+  flex-wrap: ${props => (props.nowrap ? "no wrap" : "wrap")};
+  gap: 10%;
 `
 
 const Row = props => {
   return (
-    <StyledRow justify={props.justify} className={props.className}>
+    <StyledRow
+      nowrap={props.nowrap}
+      justify={props.justify}
+      className={props.className}
+    >
       {props.children}
     </StyledRow>
   )

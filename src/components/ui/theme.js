@@ -11,6 +11,12 @@ const theme = {
     large: "calc(16px + 2vw)",
     xlarge: "calc(16px + 3vw)",
   },
+  gutter: {
+    small: "15px",
+    middle: "30px",
+    large: "45px",
+    xlarge: "90px",
+  },
 }
 
 export default theme

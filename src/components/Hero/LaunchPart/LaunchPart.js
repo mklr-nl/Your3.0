@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
-import Row from "../../ui/Grid/Row"
 import Column from "../../ui/Grid/Column"
+import InnerRow from "../../ui/Grid/InnerRow"
 import ButtonWhite from "../../ui/Buttons/ButtonWhite"
 
 const RowBar = styled.div`
@@ -9,9 +9,8 @@ const RowBar = styled.div`
   align-items: center;
   height: 35px;
   background-color: white;
-  margin: 15px 0;
   border-radius: 15px;
-  margin: 30px 0;
+  margin-bottom: 30px;
 `
 
 const Filler = styled.div`
@@ -99,10 +98,10 @@ const LaunchPart = props => {
 
   return (
     <Column minWidth="400px" flex={1}>
-      <Row justify="center">
+      <InnerRow justify="center">
         <Title>ICO WILL START IN</Title>
-      </Row>
-      <Row justify="space-between">
+      </InnerRow>
+      <InnerRow justify="space-between">
         <TimerContainer>
           <CounterNumber>{timerDays}</CounterNumber>
           <CounterText>DAYS</CounterText>
@@ -119,13 +118,13 @@ const LaunchPart = props => {
           <CounterNumber>{timerSeconds}</CounterNumber>
           <CounterText>SECONDS</CounterText>
         </TimerContainer>
-      </Row>
+      </InnerRow>
       <RowBar>
         <Filler fillerwidth={filler}></Filler>
       </RowBar>
-      <Row justify="center">
+      <InnerRow justify="center">
         <ButtonWhite>register & buy tokens now</ButtonWhite>
-      </Row>
+      </InnerRow>
     </Column>
   )
 }
