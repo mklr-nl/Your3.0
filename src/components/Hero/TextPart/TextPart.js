@@ -12,11 +12,6 @@ import Row from "../../ui/Grid/Row"
 import Column from "../../ui/Grid/Column"
 import ButtonWhite from "../../ui/Buttons/ButtonWhite"
 
-const ColumnStyled = styled(Column)`
-  @media only screen and (max-width: 1300px) {
-    margin-top: 111px;
-  }
-`
 const TitleStyled = styled.p`
   color: white;
   font-size: ${props => props.theme.textsize.xlarge};
@@ -40,7 +35,7 @@ const TextPart = props => {
     cursor: "pointer",
   }
   return (
-    <ColumnStyled minWidth="400px" flex={4}>
+    <Column minWidth="400px" flex={3}>
       <Row>
         <TitleStyled>
           the first commision free blockchain driven marketplace
@@ -69,7 +64,7 @@ const TextPart = props => {
           <AiFillInstagram style={icon} />
         </a>
       </Row>
-    </ColumnStyled>
+    </Column>
   )
 }
 export default TextPart

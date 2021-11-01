@@ -2,14 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: ${props => props.justify};
-  padding: 15px 0;
-  margin: ${props => (props.marginzero ? props.marginzero : "30px")} 0;
+  padding: 15px;
+  margin: 0 auto;
   @media only screen and (min-width: 1500px) {
     width: 90%;
   }
+  max-width: 1800px;
 `
 
 const Container = props => {

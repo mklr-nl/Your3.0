@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { GiTireIronCross } from "react-icons/gi"
 import Container from "../ui/Grid/Container"
+import Row from "../ui/Grid/Row"
 import ButtonOrange from "../ui/Buttons/ButtonOrange"
 import { createGlobalStyle } from "styled-components"
 import { motion } from "framer-motion"
@@ -22,9 +23,6 @@ const Wrapper = styled.div`
   transition: ease 0.4s all;
   opacity: 90%;
   max-width: 2000px;
-`
-const ContainerStyled = styled(Container)`
-  margin: 0 auto;
 `
 
 const Icon = styled.p`
@@ -64,6 +62,9 @@ const CrossIconStyled = styled(GiTireIronCross)`
   color: red;
   font-size: 60px;
   cursor: pointer;
+  @media only screen and (min-width: 1100px) {
+    display: none;
+  }
 `
 
 const RightSide = styled.div`
@@ -97,62 +98,64 @@ const Header = props => {
       shadow={navbar && "0 4px 6px -6px #222"}
     >
       <GlobalStyle />
-      <ContainerStyled justify="space-between" marginzero>
-        <Icon color={navbar ? "black" : "white"}>YOUR</Icon>
-        <RightSide>
-          <StyledLink
-            whileTap={{ scale: 0.9, transition: 1 }}
-            whileHover={{ scale: 1.05, transition: 0.4 }}
-            color={navbar ? "black" : "white"}
-          >
-            vision
-          </StyledLink>
-          <StyledLink
-            whileTap={{ scale: 0.9, transition: 1 }}
-            whileHover={{ scale: 1.05, transition: 0.4 }}
-            color={navbar ? "black" : "white"}
-          >
-            technology
-          </StyledLink>
-          <StyledLink
-            whileTap={{ scale: 0.9, transition: 1 }}
-            whileHover={{ scale: 1.05, transition: 0.4 }}
-            color={navbar ? "black" : "white"}
-          >
-            partners
-          </StyledLink>
-          <StyledLink
-            whileTap={{ scale: 0.9, transition: 1 }}
-            whileHover={{ scale: 1.05, transition: 0.4 }}
-            color={navbar ? "black" : "white"}
-          >
-            tokensale
-          </StyledLink>
-          <StyledLink
-            whileTap={{ scale: 0.9, transition: 1 }}
-            whileHover={{ scale: 1.05, transition: 0.4 }}
-            color={navbar ? "black" : "white"}
-          >
-            roadmap
-          </StyledLink>
-          <StyledLink
-            whileTap={{ scale: 0.9, transition: 1 }}
-            whileHover={{ scale: 1.05, transition: 0.4 }}
-            color={navbar ? "black" : "white"}
-          >
-            team
-          </StyledLink>
-          <ButtonOrangeStyled>whitepaper</ButtonOrangeStyled>
-          {showBurger ? (
-            <BurgerIconStyled
-              onClick={clickHandler}
+      <Container justify="space-between" marginzero>
+        <Row justify="space-between">
+          <Icon color={navbar ? "black" : "white"}>YOUR</Icon>
+          <RightSide>
+            <StyledLink
+              whileTap={{ scale: 0.9, transition: 1 }}
+              whileHover={{ scale: 1.05, transition: 0.4 }}
               color={navbar ? "black" : "white"}
-            />
-          ) : (
-            <CrossIconStyled onClick={clickHandler} />
-          )}
-        </RightSide>
-      </ContainerStyled>
+            >
+              vision
+            </StyledLink>
+            <StyledLink
+              whileTap={{ scale: 0.9, transition: 1 }}
+              whileHover={{ scale: 1.05, transition: 0.4 }}
+              color={navbar ? "black" : "white"}
+            >
+              technology
+            </StyledLink>
+            <StyledLink
+              whileTap={{ scale: 0.9, transition: 1 }}
+              whileHover={{ scale: 1.05, transition: 0.4 }}
+              color={navbar ? "black" : "white"}
+            >
+              partners
+            </StyledLink>
+            <StyledLink
+              whileTap={{ scale: 0.9, transition: 1 }}
+              whileHover={{ scale: 1.05, transition: 0.4 }}
+              color={navbar ? "black" : "white"}
+            >
+              tokensale
+            </StyledLink>
+            <StyledLink
+              whileTap={{ scale: 0.9, transition: 1 }}
+              whileHover={{ scale: 1.05, transition: 0.4 }}
+              color={navbar ? "black" : "white"}
+            >
+              roadmap
+            </StyledLink>
+            <StyledLink
+              whileTap={{ scale: 0.9, transition: 1 }}
+              whileHover={{ scale: 1.05, transition: 0.4 }}
+              color={navbar ? "black" : "white"}
+            >
+              team
+            </StyledLink>
+            <ButtonOrangeStyled>whitepaper</ButtonOrangeStyled>
+            {showBurger ? (
+              <BurgerIconStyled
+                onClick={clickHandler}
+                color={navbar ? "black" : "white"}
+              />
+            ) : (
+              <CrossIconStyled onClick={clickHandler} />
+            )}
+          </RightSide>
+        </Row>
+      </Container>
     </Wrapper>
   )
 }

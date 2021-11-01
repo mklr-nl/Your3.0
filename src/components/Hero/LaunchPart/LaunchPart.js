@@ -98,7 +98,7 @@ const LaunchPart = props => {
   })
 
   return (
-    <Column minWidth="400px" flex={2}>
+    <Column minWidth="400px" flex={1}>
       <Row justify="center">
         <Title>ICO WILL START IN</Title>
       </Row>

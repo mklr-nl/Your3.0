@@ -6,7 +6,7 @@ const StyledColumn = styled.div`
   flex: ${props => props.flex};
   flex-direction: column;
   flex-basis: 350px;
-  padding: 15px;
+  padding: 15px 0;
 `
 
 const Column = props => {
