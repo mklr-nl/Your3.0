@@ -8,15 +8,20 @@ import ButtonOrange from "../ui/Buttons/ButtonOrange"
 import { createGlobalStyle } from "styled-components"
 import { motion } from "framer-motion"
 import IconBlack from "../../../assets/your-logo-black.svg"
+import IconWhite from "../../../assets/your-logo-white.svg"
 
 const GlobalStyle = createGlobalStyle`
     body{   
     }
 `
 
-const StyledLogo = styled.img`
-  height: 50px;
+const IconBlackStyled = styled(IconBlack)`
+  width: 200px;
 `
+const IconWhiteStyled = styled(IconWhite)`
+  width: 200px;
+`
+
 const Wrapper = styled.div`
   z-index: 100000;
   position: fixed;
@@ -99,7 +104,7 @@ const Header = props => {
       <GlobalStyle />
       <Container justify="space-between" marginzero>
         <Row nowrap justify="space-between">
-          <IconBlack />
+          {navbar ? <IconBlackStyled /> : <IconWhiteStyled />}
           <RightSide>
             <StyledLink
               whileTap={{ scale: 0.9, transition: 1 }}
