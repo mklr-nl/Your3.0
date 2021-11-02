@@ -12,11 +12,7 @@ const StyledContainer = styled.div`
 
 const Container = props => {
   return (
-    <StyledContainer
-      className={props.className}
-      justify={props.justify}
-      marginzero={props.marginzero}
-    >
+    <StyledContainer className={props.className}>
       {props.children}
     </StyledContainer>
   )

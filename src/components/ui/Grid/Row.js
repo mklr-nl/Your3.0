@@ -8,14 +8,14 @@ const StyledRow = styled.div`
   align-items: center;
   margin: 5px 0;
   flex-wrap: ${props => (props.nowrap ? "no wrap" : "wrap")};
-  gap: 10%;
+  gap: ${props => (props.nogap ? "" : "10%")};
 `
 
 const Row = props => {
   return (
     <StyledRow
+      nogap={props.nogap}
       nowrap={props.nowrap}
-      justify={props.justify}
       className={props.className}
     >
       {props.children}

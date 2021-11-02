@@ -96,58 +96,28 @@ const Header = props => {
     window.addEventListener("scroll", changeBackground)
   }, [])
 
+  const linkText = ["vision", "technology", "partners", "tokensale", "team"]
+
   return (
     <Wrapper
       backgroundColor={navbar ? "white" : "transparent"}
       shadow={navbar && "0 4px 6px -6px #222"}
     >
       <GlobalStyle />
-      <Container justify="space-between" marginzero>
-        <Row nowrap justify="space-between">
+      <Container marginzero>
+        <Row nowrap nogap>
           {navbar ? <IconBlackStyled /> : <IconWhiteStyled />}
           <RightSide>
-            <StyledLink
-              whileTap={{ scale: 0.9, transition: 1 }}
-              whileHover={{ scale: 1.05, transition: 0.4 }}
-              color={navbar ? "black" : "white"}
-            >
-              vision
-            </StyledLink>
-            <StyledLink
-              whileTap={{ scale: 0.9, transition: 1 }}
-              whileHover={{ scale: 1.05, transition: 0.4 }}
-              color={navbar ? "black" : "white"}
-            >
-              technology
-            </StyledLink>
-            <StyledLink
-              whileTap={{ scale: 0.9, transition: 1 }}
-              whileHover={{ scale: 1.05, transition: 0.4 }}
-              color={navbar ? "black" : "white"}
-            >
-              partners
-            </StyledLink>
-            <StyledLink
-              whileTap={{ scale: 0.9, transition: 1 }}
-              whileHover={{ scale: 1.05, transition: 0.4 }}
-              color={navbar ? "black" : "white"}
-            >
-              tokensale
-            </StyledLink>
-            <StyledLink
-              whileTap={{ scale: 0.9, transition: 1 }}
-              whileHover={{ scale: 1.05, transition: 0.4 }}
-              color={navbar ? "black" : "white"}
-            >
-              roadmap
-            </StyledLink>
-            <StyledLink
-              whileTap={{ scale: 0.9, transition: 1 }}
-              whileHover={{ scale: 1.05, transition: 0.4 }}
-              color={navbar ? "black" : "white"}
-            >
-              team
-            </StyledLink>
+            {linkText.map((link, idx) => (
+              <StyledLink
+                key={idx}
+                whileTap={{ scale: 0.9, transition: 1 }}
+                whileHover={{ scale: 1.05, transition: 0.4 }}
+                color={navbar ? "black" : "white"}
+              >
+                {link}
+              </StyledLink>
+            ))}
             <ButtonOrangeStyled>whitepaper</ButtonOrangeStyled>
             {showBurger ? (
               <BurgerIconStyled
